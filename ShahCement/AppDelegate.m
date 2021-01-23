@@ -34,23 +34,23 @@
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
-    UINavigationController *navigationController = (UINavigationController*)self.window.rootViewController;
+//    UINavigationController *navigationController = (UINavigationController*)self.window.rootViewController;
     
-    UIStoryboard                *storyboard    = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+//    UIStoryboard                *storyboard    = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
-    MenuController           *menuController             = [storyboard instantiateViewControllerWithIdentifier:@"MenuController"];
+//    MenuController           *menuController             = [storyboard instantiateViewControllerWithIdentifier:@"MenuController"];
     
-    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:navigationController
-                                                            leftDrawerViewController:menuController
-                                                            rightDrawerViewController:nil];
-    
-    [self.drawerController setShowsShadow:YES];
-    [self.drawerController setMaximumLeftDrawerWidth:300.0];
-    [self.drawerController setMaximumRightDrawerWidth:300.0];
-    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-    
-    [self.drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:1.0f]];
+//    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:navigationController
+//                                                            leftDrawerViewController:menuController
+//                                                            rightDrawerViewController:nil];
+//
+//    [self.drawerController setShowsShadow:YES];
+//    [self.drawerController setMaximumLeftDrawerWidth:300.0];
+//    [self.drawerController setMaximumRightDrawerWidth:300.0];
+//    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+//    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+//
+//    [self.drawerController setDrawerVisualStateBlock:[MMDrawerVisualState parallaxVisualStateBlockWithParallaxFactor:1.0f]];
     
 //    [self.drawerController
 //     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
@@ -62,9 +62,9 @@
 //         }
 //     }];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setRootViewController:self.drawerController];
-    [self.window makeKeyAndVisible];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    [self.window setRootViewController:navigationController];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
 

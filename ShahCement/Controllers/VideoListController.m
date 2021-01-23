@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
+   // self.view.backgroundColor = [UIColor whiteColor];
     
     self.tableViewMain.backgroundColor   = APP_VIEW_BACKGROUND_COLOR;
     self.tableViewMain.tableFooterView   = [[UIView alloc] initWithFrame : CGRectZero];
@@ -127,6 +127,7 @@
         VideoPlayerController *controller = segue.destinationViewController;
         NSString *videoId = sender;
         controller.videoId = videoId;
+        controller.type = @"0";
     }
 }
 

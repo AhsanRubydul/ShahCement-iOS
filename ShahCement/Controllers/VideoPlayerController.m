@@ -36,7 +36,12 @@
         buttonBack.frame = frame;
     }
     
-    [self playVideoWithId:self.videoId];
+    if ([_type isEqualToString:@"0"]){
+        [self playVideoWithId:self.videoId];
+    }else{
+        [webViewMain loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.videoId]]];
+    }
+  
 }
 
 - (IBAction)actionBack:(id)sender
@@ -56,19 +61,19 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     NSLog(@"webViewDidStartLoad");
-    [MBProgressHUD showHUDAddedTo:webViewMain animated:YES];
+    //[MBProgressHUD showHUDAddedTo:webViewMain animated:YES];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     NSLog(@"webViewDidFinishLoad");
-    [MBProgressHUD hideHUDForView:webViewMain animated:YES];
+    //[MBProgressHUD hideHUDForView:webViewMain animated:YES];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     NSLog(@"didFailLoadWithError");
-    [MBProgressHUD hideHUDForView:webViewMain animated:YES];
+    //[MBProgressHUD hideHUDForView:webViewMain animated:YES];
 }
 
 @end

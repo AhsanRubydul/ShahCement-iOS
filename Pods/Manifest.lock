@@ -26,7 +26,7 @@ DEPENDENCIES:
   - Toast (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - FLAnimatedImage
     - MBProgressHUD
     - MMDrawerController
@@ -42,4 +42,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: aeada2813acbb551f0e9822798b262bd156777b4
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3

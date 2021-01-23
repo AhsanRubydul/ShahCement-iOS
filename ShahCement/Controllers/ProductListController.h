@@ -18,6 +18,10 @@
     IBOutlet    UIButton            *buttonMenu;
     
 }
+@property (weak, nonatomic) IBOutlet UIView *moreView;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonToggle;
 
 @property (nonatomic, weak) IBOutlet FLAnimatedImageView         *imageViewGif;
 @property (nonatomic, weak) IBOutlet UICollectionView            *collectionView;

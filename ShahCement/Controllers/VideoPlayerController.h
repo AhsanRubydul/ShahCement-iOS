@@ -16,5 +16,6 @@
 }
 
 @property (nonatomic, strong) NSString    *videoId;
+@property (nonatomic, strong) NSString    *type;
 
 @end

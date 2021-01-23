@@ -396,7 +396,7 @@
 					C58FCEEB20349459006C1DC2 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 2VBL5YVAP6;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -647,20 +647,20 @@
 			baseConfigurationReference = D1F5DA4D8A78A98244085FCB /* Pods-ShahCement.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nirmaney Aami (2VBL5YVAP6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nirmaney Aami (2VBL5YVAP6)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.3.1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = 2VBL5YVAP6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Info.pch";
 				INFOPLIST_FILE = ShahCement/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmux.nirmaneyaami;
 				PRODUCT_NAME = "Nirmane Ami";
-				PROVISIONING_PROFILE = "1f9b6b68-20bf-434b-8fd0-603e9f7d440e";
-				PROVISIONING_PROFILE_SPECIFIER = "ShahCement-Distribution-Profile";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -669,20 +669,20 @@
 			baseConfigurationReference = 2A8A74BB3087A59E212B620F /* Pods-ShahCement.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nirmaney Aami (2VBL5YVAP6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nirmaney Aami (2VBL5YVAP6)";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.3.1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.0.0;
 				DEVELOPMENT_TEAM = 2VBL5YVAP6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Info.pch";
 				INFOPLIST_FILE = ShahCement/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmux.nirmaneyaami;
 				PRODUCT_NAME = "Nirmane Ami";
-				PROVISIONING_PROFILE = "1f9b6b68-20bf-434b-8fd0-603e9f7d440e";
-				PROVISIONING_PROFILE_SPECIFIER = "ShahCement-Distribution-Profile";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
