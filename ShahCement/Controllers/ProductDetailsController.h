@@ -19,7 +19,8 @@
     IBOutlet    UIButton                    *buttonFaq;
     
     IBOutlet    UIImageView                 *imageViewTopBar;
-    IBOutlet    UIImageView                 *imageViewBottomBar;
+    
+    IBOutlet NSLayoutConstraint *bottomImageViewHeightConstraint;
 }
 
 @property(nonatomic,strong) NSString *fileName;

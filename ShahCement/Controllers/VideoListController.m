@@ -39,11 +39,6 @@
         frame.origin.y += IPHONEX_EXTRA_HEIGHT;
         imageViewTopBar.frame = frame;
         
-        frame = self.tableViewMain.frame;
-        frame.origin.y += IPHONEX_EXTRA_HEIGHT;
-        frame.size.height -= IPHONEX_EXTRA_HEIGHT;
-        self.tableViewMain.frame = frame;
-        
         frame = buttonBack.frame;
         frame.origin.y = imageViewTopBar.frame.origin.y + (imageViewTopBar.frame.size.height - frame.size.height) / 2;
         buttonBack.frame = frame;
@@ -52,48 +47,39 @@
     if (IS_OUTLINE_ON) {
         [imageViewTopBar.layer setBorderColor:[UIColor yellowColor].CGColor];
         [imageViewTopBar.layer setBorderWidth:2.0f];
-        
-        [self.tableViewMain.layer setBorderColor:[UIColor blueColor].CGColor];
-        [self.tableViewMain.layer setBorderWidth:2.0f];
-        
-        [imageViewBottomBar.layer setBorderColor:[UIColor yellowColor].CGColor];
-        [imageViewBottomBar.layer setBorderWidth:2.0f];
     }
 }
 
-- (void)adjustBottomBar
-{
+- (void)adjustBottomBar {
+    
     CGRect screenSize = [UIScreen mainScreen].bounds;
     CGSize size = [UIImage imageNamed:@"bottombar"].size;
     
-    CGRect frame = imageViewBottomBar.frame;
-    frame.size.width = screenSize.size.width;
-    frame.size.height = size.height * screenSize.size.width / size.width;
-    imageViewBottomBar.frame = frame;
+    CGFloat height = size.height * screenSize.size.width / size.width;
+    
+    bottomImageViewHeightConstraint.constant = height;
+
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
 }
 
-- (IBAction)actionBack:(id)sender
-{
+- (IBAction)actionBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 210.0f;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)theTableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)theTableView numberOfRowsInSection:(NSInteger)section {
     return [DataSource videoListIds].count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     VideoCell *cell = [theTableView dequeueReusableCellWithIdentifier:@"VideoCell"];
     
@@ -113,8 +99,7 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *videoId = [[DataSource videoListIds] objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier:@"VideoPlayerController" sender:videoId];

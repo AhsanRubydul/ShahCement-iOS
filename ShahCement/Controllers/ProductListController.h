@@ -13,19 +13,19 @@
 {
     IBOutlet    UIImageView         *imageViewTopBar;
     IBOutlet    UIImageView         *imageViewSubTopBar;
-    IBOutlet    UIImageView         *imageViewBottomBar;
     IBOutlet    UIImageView         *imageViewSplash;
     IBOutlet    UIButton            *buttonMenu;
-    
 }
 @property (weak, nonatomic) IBOutlet UIView *moreView;
 
-
 @property (weak, nonatomic) IBOutlet UIButton *buttonToggle;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomImageViewHeightConstraint;
+
 @property (nonatomic, weak) IBOutlet FLAnimatedImageView         *imageViewGif;
-@property (nonatomic, weak) IBOutlet UICollectionView            *collectionView;
 @property (nonatomic, weak) IBOutlet UICollectionViewFlowLayout  *collectionLayout;
+@property (weak, nonatomic) IBOutlet UICollectionView *mViewCollectionView;
+
 @end
 
 @interface ProductCell : UICollectionViewCell

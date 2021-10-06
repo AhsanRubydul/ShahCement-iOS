@@ -39,11 +39,6 @@
         frame.origin.y += IPHONEX_EXTRA_HEIGHT;
         viewButtonBar.frame = frame;
         
-        frame = webViewMain.frame;
-        frame.origin.y += IPHONEX_EXTRA_HEIGHT;
-        frame.size.height -= IPHONEX_EXTRA_HEIGHT;
-        webViewMain.frame = frame;
-        
         frame = buttonBack.frame;
         frame.origin.y = imageViewTopBar.frame.origin.y + (imageViewTopBar.frame.size.height - frame.size.height) / 2;
         buttonBack.frame = frame;
@@ -58,9 +53,6 @@
         
         [webViewMain.layer setBorderColor:[UIColor blueColor].CGColor];
         [webViewMain.layer setBorderWidth:4.0f];
-        
-        [imageViewBottomBar.layer setBorderColor:[UIColor yellowColor].CGColor];
-        [imageViewBottomBar.layer setBorderWidth:2.0f];
     }
     
     customLoaderView = [[CustomLoader alloc] initWithFrame:self.view.bounds];
@@ -107,10 +99,12 @@
     CGRect screenSize = [UIScreen mainScreen].bounds;
     CGSize size = [UIImage imageNamed:@"bottombar"].size;
     
-    CGRect frame = imageViewBottomBar.frame;
-    frame.size.width = screenSize.size.width;
-    frame.size.height = size.height * screenSize.size.width / size.width;
-    imageViewBottomBar.frame = frame;
+    CGFloat height = size.height * screenSize.size.width / size.width;
+    
+    bottomImageViewHeightConstraint.constant = height;
+
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
 }
 
 

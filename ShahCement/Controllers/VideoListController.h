@@ -12,7 +12,7 @@
 {
     IBOutlet    UIButton        *buttonBack;
     IBOutlet    UIImageView     *imageViewTopBar;
-    IBOutlet    UIImageView     *imageViewBottomBar;
+    __weak IBOutlet NSLayoutConstraint *bottomImageViewHeightConstraint;
 }
 @end
 
