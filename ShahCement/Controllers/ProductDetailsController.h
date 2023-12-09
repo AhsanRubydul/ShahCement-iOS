@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface ProductDetailsController : UIViewController
 {
@@ -17,13 +18,17 @@
     IBOutlet    UIButton                    *buttonLokkhonio;
     IBOutlet    UIButton                    *buttonVideo;
     IBOutlet    UIButton                    *buttonFaq;
+    IBOutlet    UIButton                    *buttonAudio;
     
     IBOutlet    UIImageView                 *imageViewTopBar;
     
+    IBOutlet NSLayoutConstraint *topButtonWidth;
     IBOutlet NSLayoutConstraint *bottomImageViewHeightConstraint;
 }
 
 @property(nonatomic,strong) NSString *fileName;
 @property(nonatomic,strong) NSString *videoId;
+@property(nonatomic,strong) NSString *thumbnail;
+@property(nonatomic,strong) AVAudioPlayer *audioPlayer;
 
 @end

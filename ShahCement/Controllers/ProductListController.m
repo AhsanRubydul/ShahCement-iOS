@@ -153,6 +153,7 @@
         ProductDetailsController *controller = segue.destinationViewController;
         controller.fileName = [arr objectAtIndex:0];
         controller.videoId = videoId;
+        controller.thumbnail = [[arrProductList objectAtIndex:indexPath.row] valueForKey:@"name"];
     }
     
   
