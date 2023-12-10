@@ -61,22 +61,9 @@
     customLoaderView = [[CustomLoader alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:customLoaderView];
     customLoaderView.alpha = 0.0f;
-    
-    customLoaderView.alpha = 1.0f;
-    [customLoaderView startAnimation];
-    webViewMain.scalesPageToFit = YES;
-    webViewMain.scrollView.showsHorizontalScrollIndicator = NO;
-    webViewMain.scrollView.showsVerticalScrollIndicator = NO;
+
+    [self loadInitialisePdf];
     [self setupAudioPlayer];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        NSString    *mainPath = [[AppSupporter sharedInstance] getMainFilePath:self.fileName];
-        NSURL *targetURL = [NSURL fileURLWithPath:mainPath];
-        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
-        [webViewMain loadRequest:request];
-    });
-    
-    //[webViewMain sizeToFit];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -148,6 +135,7 @@
     
     customLoaderView.alpha = 1.0f;
     [customLoaderView startAnimation];
+    [self stopPlayer];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         NSString    *lokkhonioPath = [[AppSupporter sharedInstance] getLokkhonioFilePath:self.fileName];
         NSURL *targetURL = [NSURL fileURLWithPath:lokkhonioPath];
@@ -170,6 +158,7 @@
         
     }];
     UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"ACCEPT" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+        [self stopPlayer];
         webViewMain.scalesPageToFit = NO;
         customLoaderView.alpha = 1.0f;
         [customLoaderView startAnimation];
@@ -194,6 +183,7 @@
            [self.audioPlayer stop];
            [self.audioPlayer setCurrentTime:0];
        } else {
+           [self loadInitialisePdf];
            [self.audioPlayer play];
        }
 }
@@ -207,6 +197,7 @@
     
     customLoaderView.alpha = 1.0f;
     [customLoaderView startAnimation];
+    [self stopPlayer];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         NSString    *lokkhonioPath = [[AppSupporter sharedInstance] getFaqFilePath:self.fileName];
         NSURL *targetURL = [NSURL fileURLWithPath:lokkhonioPath];
@@ -216,7 +207,45 @@
     });
 }
 
+- (void)loadInitialisePdf{
+    
+    NSString    *mainPath = [[AppSupporter sharedInstance] getMainFilePath:self.fileName];
+    NSURLRequest *currentRequest = webViewMain.request;
+    
+    if (currentRequest) {
+        NSString *currentURLString = currentRequest.URL.absoluteString;
+        NSArray *currentURLArr = [currentURLString componentsSeparatedByString:@"/"] ;
+        NSString *fileNameFromCurrentURL = [currentURLArr lastObject];
+        NSArray *mainPathArr = [mainPath componentsSeparatedByString:@"/"] ;
+        NSString *fileNameFromMainPath = [mainPathArr lastObject];
+        
+        if ([fileNameFromCurrentURL isEqualToString:fileNameFromMainPath]) {
+            return;
+        }
+    }
+    
+    customLoaderView.alpha = 1.0f;
+    [customLoaderView startAnimation];
+    webViewMain.scalesPageToFit = YES;
+    webViewMain.scrollView.showsHorizontalScrollIndicator = NO;
+    webViewMain.scrollView.showsVerticalScrollIndicator = NO;
+    [self setupAudioPlayer];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        NSURL *targetURL = [NSURL fileURLWithPath:mainPath];
+        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+        [webViewMain loadRequest:request];
+    });
+}
+
 #pragma mark - player initialise
+
+- (void)stopPlayer {
+    if (self.audioPlayer.isPlaying) {
+        [self.audioPlayer stop];
+        [self.audioPlayer setCurrentTime:0];
+    }
+}
 
 - (void)setupAudioPlayer {
     NSString *mp3FilePath = [[AppSupporter sharedInstance] getAudioFilePath:self.fileName];
@@ -236,7 +265,7 @@
     
     if (error || sessionError) {
         buttonAudio.alpha = 0.7f;
-        NSLog(@"Error initializing audio player: %@", error.localizedDescription);
+        
     } else {
         [self.audioPlayer prepareToPlay];
         [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
