@@ -355,7 +355,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="OQy-z9-pBB" secondAttribute="height" multiplier="100:32" id="Pcc-2t-4zx"/>
                                                 </constraints>
-                                                <state key="normal" image="tab_btn_question"/>
+                                                <state key="normal" image="tab_btn_audio"/>
                                                 <connections>
                                                     <action selector="actionAudio:" destination="fiC-mz-6HX" eventType="touchUpInside" id="0Vf-pP-gHB"/>
                                                 </connections>
@@ -720,6 +720,7 @@
         <image name="ic_video" width="1141" height="1393"/>
         <image name="left_arrow" width="24" height="24"/>
         <image name="list" width="28" height="28"/>
+        <image name="tab_btn_audio" width="320" height="93"/>
         <image name="tab_btn_lokkhoniyo" width="320" height="93"/>
         <image name="tab_btn_question" width="320" height="97.5"/>
         <image name="tab_btn_video" width="320" height="93"/>
