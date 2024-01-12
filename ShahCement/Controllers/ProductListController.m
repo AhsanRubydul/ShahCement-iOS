@@ -237,6 +237,17 @@
     [self performSegueWithIdentifier:@"VideoPlayerController" sender:@"https://houseful-offer-2021.shahcement.com"];
 }
 
+- (IBAction)actionWhatsAppPhone:(id)sender {
+    NSString *urlString = @"whatsapp://send?phone=+8801958075553";
+    NSURL *url = [NSURL URLWithString:urlString];
+    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
+        if (!success) {
+            NSURL *storeLinkURL = [NSURL URLWithString:@"https://apps.apple.com/us/app/whatsapp-messenger/id310633997"];
+            [[UIApplication sharedApplication]openURL:storeLinkURL options:@{} completionHandler:nil];
+        }
+    }];
+}
+
 #pragma mark MFMailCompose Delegates
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     [self dismissViewControllerAnimated:YES completion:NULL];
