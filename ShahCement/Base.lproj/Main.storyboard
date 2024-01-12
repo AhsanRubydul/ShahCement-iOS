@@ -54,9 +54,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSR-ys-l9p">
                                         <rect key="frame" x="168" y="0.0" width="46" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="housefull"/>
+                                        <state key="normal" image="WhatsApp"/>
                                         <connections>
-                                            <action selector="actionSecondWebsite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q0O-1J-MxQ"/>
+                                            <action selector="actionWhatsAppPhone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xd2-58-Zmv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiT-Te-rW3">
@@ -708,13 +708,13 @@
         <segue reference="e7d-U7-dIj"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Mail" width="576" height="576"/>
-        <image name="More" width="576" height="576"/>
-        <image name="Phone" width="576" height="576"/>
-        <image name="Web" width="576" height="576"/>
+        <image name="Mail" width="2400" height="2400"/>
+        <image name="More" width="2400" height="2400"/>
+        <image name="Phone" width="2400" height="2400"/>
+        <image name="Web" width="2400" height="2400"/>
+        <image name="WhatsApp" width="1200" height="1200"/>
         <image name="after_splash.png" width="1280" height="1920"/>
         <image name="bottombar" width="320" height="59.5"/>
-        <image name="housefull" width="1200.5" height="1200.5"/>
         <image name="ic_forum" width="1502" height="1380"/>
         <image name="ic_product" width="1140" height="1368"/>
         <image name="ic_video" width="1141" height="1393"/>
