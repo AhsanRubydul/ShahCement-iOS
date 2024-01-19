@@ -10,6 +10,8 @@
 #import "AppSupporter.h"
 #import "CustomLoader.h"
 #import "UIView+Toast.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ProductDetailsController ()
 {
@@ -28,6 +30,7 @@
     viewButtonBar.backgroundColor = APP_THEME_COLOR;
     
     [self adjustBottomBar];
+    [self calculateTopButtonWidth];
     
     BOOL iPhoneX = [[AppSupporter sharedInstance] isIphoneXDevices];
     if(iPhoneX){
@@ -58,21 +61,9 @@
     customLoaderView = [[CustomLoader alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:customLoaderView];
     customLoaderView.alpha = 0.0f;
-    
-    customLoaderView.alpha = 1.0f;
-    [customLoaderView startAnimation];
-    webViewMain.scalesPageToFit = YES;
-    webViewMain.scrollView.showsHorizontalScrollIndicator = NO;
-    webViewMain.scrollView.showsVerticalScrollIndicator = NO;
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        NSString    *mainPath = [[AppSupporter sharedInstance] getMainFilePath:self.fileName];
-        NSURL *targetURL = [NSURL fileURLWithPath:mainPath];
-        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
-        [webViewMain loadRequest:request];
-    });
-    
-    //[webViewMain sizeToFit];
+
+    [self loadInitialisePdf];
+    [self setupAudioPlayer];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -92,6 +83,19 @@
     if (faqPath == nil) {
         buttonFaq.alpha = 0.7f;
     }
+}
+
+- (void)calculateTopButtonWidth {
+    int buttonNumber = 4;
+    float interButtonSpace = 4;
+    float totalInterButtonSpace = (buttonNumber - 1) * interButtonSpace;
+    
+    UIScreen *mainScreen = [UIScreen mainScreen];
+    CGRect screenBounds = mainScreen.bounds;
+    CGFloat screenWidth = CGRectGetWidth(screenBounds);
+    CGFloat buttonWidth = (((screenWidth - 16.0) - totalInterButtonSpace) / buttonNumber);
+    topButtonWidth.constant = buttonWidth;
+    [self.view layoutIfNeeded];
 }
 
 - (void)adjustBottomBar
@@ -131,6 +135,7 @@
     
     customLoaderView.alpha = 1.0f;
     [customLoaderView startAnimation];
+    [self stopPlayer];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         NSString    *lokkhonioPath = [[AppSupporter sharedInstance] getLokkhonioFilePath:self.fileName];
         NSURL *targetURL = [NSURL fileURLWithPath:lokkhonioPath];
@@ -153,6 +158,7 @@
         
     }];
     UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"ACCEPT" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+        [self stopPlayer];
         webViewMain.scalesPageToFit = NO;
         customLoaderView.alpha = 1.0f;
         [customLoaderView startAnimation];
@@ -167,6 +173,21 @@
     
 }
 
+- (IBAction)actionAudio:(id)sender {
+    if (buttonAudio.alpha == 0.7f) {
+        [self.view makeToast:@"এখানে প্রযোজ্য নয় !!!"];
+        return;
+    }
+    
+    if (self.audioPlayer.isPlaying) {
+           [self.audioPlayer stop];
+           [self.audioPlayer setCurrentTime:0];
+       } else {
+           [self loadInitialisePdf];
+           [self.audioPlayer play];
+       }
+}
+
 - (IBAction)actionQuestionAnswers:(id)sender
 {
     if (buttonFaq.alpha == 0.7f) {
@@ -176,6 +197,7 @@
     
     customLoaderView.alpha = 1.0f;
     [customLoaderView startAnimation];
+    [self stopPlayer];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         NSString    *lokkhonioPath = [[AppSupporter sharedInstance] getFaqFilePath:self.fileName];
         NSURL *targetURL = [NSURL fileURLWithPath:lokkhonioPath];
@@ -183,6 +205,99 @@
         [webViewMain loadRequest:request];
         webViewMain.scalesPageToFit = YES;
     });
+}
+
+- (void)loadInitialisePdf{
+    
+    NSString    *mainPath = [[AppSupporter sharedInstance] getMainFilePath:self.fileName];
+    NSURLRequest *currentRequest = webViewMain.request;
+    
+    if (currentRequest) {
+        NSString *currentURLString = currentRequest.URL.absoluteString;
+        NSArray *currentURLArr = [currentURLString componentsSeparatedByString:@"/"] ;
+        NSString *fileNameFromCurrentURL = [currentURLArr lastObject];
+        NSArray *mainPathArr = [mainPath componentsSeparatedByString:@"/"] ;
+        NSString *fileNameFromMainPath = [mainPathArr lastObject];
+        
+        if ([fileNameFromCurrentURL isEqualToString:fileNameFromMainPath]) {
+            return;
+        }
+    }
+    
+    customLoaderView.alpha = 1.0f;
+    [customLoaderView startAnimation];
+    webViewMain.scalesPageToFit = YES;
+    webViewMain.scrollView.showsHorizontalScrollIndicator = NO;
+    webViewMain.scrollView.showsVerticalScrollIndicator = NO;
+    [self setupAudioPlayer];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        NSURL *targetURL = [NSURL fileURLWithPath:mainPath];
+        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+        [webViewMain loadRequest:request];
+    });
+}
+
+#pragma mark - player initialise
+
+- (void)stopPlayer {
+    if (self.audioPlayer.isPlaying) {
+        [self.audioPlayer stop];
+        [self.audioPlayer setCurrentTime:0];
+    }
+}
+
+- (void)setupAudioPlayer {
+    NSString *mp3FilePath = [[AppSupporter sharedInstance] getAudioFilePath:self.fileName];
+    
+    NSError *error;
+    if (mp3FilePath) {
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:mp3FilePath] error:&error];
+    } else {
+        buttonAudio.alpha = 0.7f;
+        return;
+    }
+    
+    NSError *sessionError;
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback error:&sessionError];
+    [audioSession setActive:YES error:nil];
+    
+    if (error || sessionError) {
+        buttonAudio.alpha = 0.7f;
+        
+    } else {
+        [self.audioPlayer prepareToPlay];
+        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+        [self becomeFirstResponder];
+        [self setupPlayerControlCentre];
+    }
+}
+
+- (void)setupPlayerControlCentre {
+    
+    NSMutableDictionary *nowPlayingInfo = [NSMutableDictionary dictionary];
+    [nowPlayingInfo setObject:@"Shah Cement Nirmane AMI" forKey:MPMediaItemPropertyTitle];
+    [nowPlayingInfo setObject:[NSNumber numberWithFloat:self.audioPlayer.duration] forKey:MPMediaItemPropertyPlaybackDuration];
+    
+    if (self.thumbnail) {
+        NSString *path   = [[AppSupporter sharedInstance] getProductThumbPath];
+        UIImage *artworkImage = [UIImage imageWithContentsOfFile:[path stringByAppendingPathComponent:self.thumbnail]];
+        MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithBoundsSize:artworkImage.size requestHandler:^UIImage * _Nonnull(CGSize size) {
+            return  artworkImage;
+        }];
+        [nowPlayingInfo setObject:artwork forKey:MPMediaItemPropertyArtwork];
+    }
+    
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
+}
+
+- (void)updatePlayerControlCentre {
+    NSMutableDictionary *nowPlayingInfo = [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo.mutableCopy;
+    
+    [nowPlayingInfo setObject:[NSNumber numberWithDouble:self.audioPlayer.currentTime] forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+    
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
@@ -214,6 +329,28 @@
     //NSLog(@"didFailLoadWithError");
     customLoaderView.alpha = 0.0f;
     [customLoaderView stopAnimation];
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlPlay:
+                [self.audioPlayer play];
+                break;
+                
+            case UIEventSubtypeRemoteControlPause:
+                [self.audioPlayer pause];
+                break;
+                
+            case UIEventSubtypeRemoteControlStop:
+                [self.audioPlayer stop];
+                break;
+                
+            default:
+                break;
+        }
+    }
+    [self updatePlayerControlCentre];
 }
 
 @end

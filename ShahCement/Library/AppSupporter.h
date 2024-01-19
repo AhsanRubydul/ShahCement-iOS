@@ -17,6 +17,8 @@
 - (NSString*)getMainFilePath:(NSString*)fileName;
 - (NSString*)getLokkhonioFilePath:(NSString*)fileName;
 - (NSString*)getFaqFilePath:(NSString*)fileName;
+- (NSString*)getAudioImagePath:(NSString*)fileName;
+- (NSString*)getAudioFilePath:(NSString*)fileName;
 
 - (BOOL)isIphoneXDevices;
 

@@ -77,6 +77,16 @@
     return nil;
 }
 
+- (NSString*)getAudioFilePath:(NSString*)fileName
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"mp3"];
+    BOOL exist = [[NSFileManager defaultManager] fileExistsAtPath:path];
+    if (exist) {
+        return path;
+    }
+    return nil;
+}
+
 - (BOOL)isIphoneXDevices{
     
     if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

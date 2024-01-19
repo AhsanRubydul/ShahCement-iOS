@@ -79,6 +79,36 @@
 		C58FCF1A2034A418006C1DC2 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C58FCF152034A418006C1DC2 /* Montserrat-SemiBold.ttf */; };
 		C5FB2BA12035C0B4009A6055 /* ProductListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2BA02035C0B4009A6055 /* ProductListController.m */; };
 		C5FB2BA42035C131009A6055 /* ProductDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2BA32035C131009A6055 /* ProductDetailsController.m */; };
+		EF53C18C2B22F341009AC846 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF53C18B2B22F341009AC846 /* AVFoundation.framework */; };
+		EFCF82E52B243AB2005786DE /* site_preperation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82C82B243AAF005786DE /* site_preperation.mp3 */; };
+		EFCF82E62B243AB2005786DE /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82C92B243AAF005786DE /* water.mp3 */; };
+		EFCF82E72B243AB2005786DE /* design.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82CA2B243AB0005786DE /* design.mp3 */; };
+		EFCF82E82B243AB2005786DE /* fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82CB2B243AB0005786DE /* fire.mp3 */; };
+		EFCF82E92B243AB2005786DE /* marble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82CC2B243AB0005786DE /* marble.mp3 */; };
+		EFCF82EA2B243AB2005786DE /* concrete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82CD2B243AB0005786DE /* concrete.mp3 */; };
+		EFCF82EB2B243AB2005786DE /* khoa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82CE2B243AB0005786DE /* khoa.mp3 */; };
+		EFCF82EC2B243AB2005786DE /* sanitary.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82CF2B243AB0005786DE /* sanitary.mp3 */; };
+		EFCF82ED2B243AB2005786DE /* rod.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D02B243AB0005786DE /* rod.mp3 */; };
+		EFCF82EE2B243AB2005786DE /* plaster.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D12B243AB0005786DE /* plaster.mp3 */; };
+		EFCF82EF2B243AB2005786DE /* wood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D22B243AB0005786DE /* wood.mp3 */; };
+		EFCF82F02B243AB2005786DE /* formwork.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D32B243AB0005786DE /* formwork.mp3 */; };
+		EFCF82F12B243AB2005786DE /* earthquack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D42B243AB0005786DE /* earthquack.mp3 */; };
+		EFCF82F22B243AB2005786DE /* bali.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D52B243AB1005786DE /* bali.mp3 */; };
+		EFCF82F32B243AB2005786DE /* piling.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D62B243AB1005786DE /* piling.mp3 */; };
+		EFCF82F42B243AB2005786DE /* foundation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D72B243AB1005786DE /* foundation.mp3 */; };
+		EFCF82F52B243AB2005786DE /* painting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D82B243AB1005786DE /* painting.mp3 */; };
+		EFCF82F62B243AB2005786DE /* rod_badhai.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82D92B243AB1005786DE /* rod_badhai.mp3 */; };
+		EFCF82F72B243AB2005786DE /* gathuni.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82DA2B243AB1005786DE /* gathuni.mp3 */; };
+		EFCF82F82B243AB2005786DE /* readymix_concrete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82DB2B243AB1005786DE /* readymix_concrete.mp3 */; };
+		EFCF82F92B243AB2005786DE /* stone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82DC2B243AB1005786DE /* stone.mp3 */; };
+		EFCF82FA2B243AB2005786DE /* iter_kotha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82DD2B243AB1005786DE /* iter_kotha.mp3 */; };
+		EFCF82FB2B243AB2005786DE /* electric.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82DE2B243AB2005786DE /* electric.mp3 */; };
+		EFCF82FC2B243AB2005786DE /* concrete_dhalai.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82DF2B243AB2005786DE /* concrete_dhalai.mp3 */; };
+		EFCF82FD2B243AB2005786DE /* tiles.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82E02B243AB2005786DE /* tiles.mp3 */; };
+		EFCF82FE2B243AB2005786DE /* curing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82E12B243AB2005786DE /* curing.mp3 */; };
+		EFCF82FF2B243AB2005786DE /* soil_test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82E22B243AB2005786DE /* soil_test.mp3 */; };
+		EFCF83002B243AB2005786DE /* cement.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82E32B243AB2005786DE /* cement.mp3 */; };
+		EFCF83012B243AB2005786DE /* glass_alumunium.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82E42B243AB2005786DE /* glass_alumunium.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +198,36 @@
 		C5FB2BA22035C131009A6055 /* ProductDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsController.h; sourceTree = "<group>"; };
 		C5FB2BA32035C131009A6055 /* ProductDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsController.m; sourceTree = "<group>"; };
 		D1F5DA4D8A78A98244085FCB /* Pods-ShahCement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShahCement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShahCement/Pods-ShahCement.debug.xcconfig"; sourceTree = "<group>"; };
+		EF53C18B2B22F341009AC846 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EFCF82C82B243AAF005786DE /* site_preperation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = site_preperation.mp3; sourceTree = "<group>"; };
+		EFCF82C92B243AAF005786DE /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
+		EFCF82CA2B243AB0005786DE /* design.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = design.mp3; sourceTree = "<group>"; };
+		EFCF82CB2B243AB0005786DE /* fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fire.mp3; sourceTree = "<group>"; };
+		EFCF82CC2B243AB0005786DE /* marble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = marble.mp3; sourceTree = "<group>"; };
+		EFCF82CD2B243AB0005786DE /* concrete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = concrete.mp3; sourceTree = "<group>"; };
+		EFCF82CE2B243AB0005786DE /* khoa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = khoa.mp3; sourceTree = "<group>"; };
+		EFCF82CF2B243AB0005786DE /* sanitary.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sanitary.mp3; sourceTree = "<group>"; };
+		EFCF82D02B243AB0005786DE /* rod.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rod.mp3; sourceTree = "<group>"; };
+		EFCF82D12B243AB0005786DE /* plaster.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = plaster.mp3; sourceTree = "<group>"; };
+		EFCF82D22B243AB0005786DE /* wood.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wood.mp3; sourceTree = "<group>"; };
+		EFCF82D32B243AB0005786DE /* formwork.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = formwork.mp3; sourceTree = "<group>"; };
+		EFCF82D42B243AB0005786DE /* earthquack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = earthquack.mp3; sourceTree = "<group>"; };
+		EFCF82D52B243AB1005786DE /* bali.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bali.mp3; sourceTree = "<group>"; };
+		EFCF82D62B243AB1005786DE /* piling.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piling.mp3; sourceTree = "<group>"; };
+		EFCF82D72B243AB1005786DE /* foundation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = foundation.mp3; sourceTree = "<group>"; };
+		EFCF82D82B243AB1005786DE /* painting.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = painting.mp3; sourceTree = "<group>"; };
+		EFCF82D92B243AB1005786DE /* rod_badhai.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rod_badhai.mp3; sourceTree = "<group>"; };
+		EFCF82DA2B243AB1005786DE /* gathuni.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gathuni.mp3; sourceTree = "<group>"; };
+		EFCF82DB2B243AB1005786DE /* readymix_concrete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = readymix_concrete.mp3; sourceTree = "<group>"; };
+		EFCF82DC2B243AB1005786DE /* stone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stone.mp3; sourceTree = "<group>"; };
+		EFCF82DD2B243AB1005786DE /* iter_kotha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = iter_kotha.mp3; sourceTree = "<group>"; };
+		EFCF82DE2B243AB2005786DE /* electric.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = electric.mp3; sourceTree = "<group>"; };
+		EFCF82DF2B243AB2005786DE /* concrete_dhalai.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = concrete_dhalai.mp3; sourceTree = "<group>"; };
+		EFCF82E02B243AB2005786DE /* tiles.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tiles.mp3; sourceTree = "<group>"; };
+		EFCF82E12B243AB2005786DE /* curing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = curing.mp3; sourceTree = "<group>"; };
+		EFCF82E22B243AB2005786DE /* soil_test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soil_test.mp3; sourceTree = "<group>"; };
+		EFCF82E32B243AB2005786DE /* cement.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cement.mp3; sourceTree = "<group>"; };
+		EFCF82E42B243AB2005786DE /* glass_alumunium.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = glass_alumunium.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +237,7 @@
 			files = (
 				C540670621160F9300C31564 /* AudioToolbox.framework in Frameworks */,
 				26C8A5E1C0D0F96965D9EFB5 /* libPods-ShahCement.a in Frameworks */,
+				EF53C18C2B22F341009AC846 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +383,7 @@
 		C58FCF0F2034A418006C1DC2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				EF53C18D2B234044009AC846 /* audios */,
 				734341292362BE7D00F23D00 /* loader_images */,
 				C5406700211602CA00C31564 /* splash.gif */,
 				C5406702211607B000C31564 /* after_splash.png */,
@@ -357,10 +419,47 @@
 		EECD9F4BEF33E9F7C1E85A11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF53C18B2B22F341009AC846 /* AVFoundation.framework */,
 				C540670521160F9300C31564 /* AudioToolbox.framework */,
 				2A71D99D6220A75BE9B3A837 /* libPods-ShahCement.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF53C18D2B234044009AC846 /* audios */ = {
+			isa = PBXGroup;
+			children = (
+				EFCF82D52B243AB1005786DE /* bali.mp3 */,
+				EFCF82E32B243AB2005786DE /* cement.mp3 */,
+				EFCF82DF2B243AB2005786DE /* concrete_dhalai.mp3 */,
+				EFCF82CD2B243AB0005786DE /* concrete.mp3 */,
+				EFCF82E12B243AB2005786DE /* curing.mp3 */,
+				EFCF82CA2B243AB0005786DE /* design.mp3 */,
+				EFCF82D42B243AB0005786DE /* earthquack.mp3 */,
+				EFCF82DE2B243AB2005786DE /* electric.mp3 */,
+				EFCF82CB2B243AB0005786DE /* fire.mp3 */,
+				EFCF82D32B243AB0005786DE /* formwork.mp3 */,
+				EFCF82D72B243AB1005786DE /* foundation.mp3 */,
+				EFCF82DA2B243AB1005786DE /* gathuni.mp3 */,
+				EFCF82E42B243AB2005786DE /* glass_alumunium.mp3 */,
+				EFCF82DD2B243AB1005786DE /* iter_kotha.mp3 */,
+				EFCF82CE2B243AB0005786DE /* khoa.mp3 */,
+				EFCF82CC2B243AB0005786DE /* marble.mp3 */,
+				EFCF82D82B243AB1005786DE /* painting.mp3 */,
+				EFCF82D62B243AB1005786DE /* piling.mp3 */,
+				EFCF82D12B243AB0005786DE /* plaster.mp3 */,
+				EFCF82DB2B243AB1005786DE /* readymix_concrete.mp3 */,
+				EFCF82D92B243AB1005786DE /* rod_badhai.mp3 */,
+				EFCF82D02B243AB0005786DE /* rod.mp3 */,
+				EFCF82CF2B243AB0005786DE /* sanitary.mp3 */,
+				EFCF82C82B243AAF005786DE /* site_preperation.mp3 */,
+				EFCF82E22B243AB2005786DE /* soil_test.mp3 */,
+				EFCF82DC2B243AB1005786DE /* stone.mp3 */,
+				EFCF82E02B243AB2005786DE /* tiles.mp3 */,
+				EFCF82C92B243AAF005786DE /* water.mp3 */,
+				EFCF82D22B243AB0005786DE /* wood.mp3 */,
+			);
+			path = audios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,26 +523,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCF82F12B243AB2005786DE /* earthquack.mp3 in Resources */,
 				734341562362BE7D00F23D00 /* loader_shahcement_01.png in Resources */,
+				EFCF82F52B243AB2005786DE /* painting.mp3 in Resources */,
 				C54066F62115FFFD00C31564 /* 04.png in Resources */,
 				C54066F52115FFFD00C31564 /* 03.png in Resources */,
+				EFCF82F72B243AB2005786DE /* gathuni.mp3 in Resources */,
 				7343414F2362BE7D00F23D00 /* loader_shahcement_11.png in Resources */,
 				734341522362BE7D00F23D00 /* loader_shahcement_10.png in Resources */,
 				734341642362BE7D00F23D00 /* loader_shahcement_25.png in Resources */,
+				EFCF82EF2B243AB2005786DE /* wood.mp3 in Resources */,
 				C54066FF2115FFFD00C31564 /* 10.png in Resources */,
 				C54066E32115F38200C31564 /* pdfs in Resources */,
 				7343415B2362BE7D00F23D00 /* loader_shahcement_16.png in Resources */,
 				7343414E2362BE7D00F23D00 /* loader_shahcement_07.png in Resources */,
+				EFCF82EE2B243AB2005786DE /* plaster.mp3 in Resources */,
 				7343416A2362BE7D00F23D00 /* loader_shahcement_22.png in Resources */,
 				C54066F22115FFFD00C31564 /* 01.png in Resources */,
 				734341552362BE7D00F23D00 /* loader_shahcement_00.png in Resources */,
 				C58FCF172034A418006C1DC2 /* Montserrat-Light.ttf in Resources */,
+				EFCF82E62B243AB2005786DE /* water.mp3 in Resources */,
 				734341662362BE7D00F23D00 /* loader_shahcement_09.png in Resources */,
+				EFCF82FD2B243AB2005786DE /* tiles.mp3 in Resources */,
+				EFCF82F42B243AB2005786DE /* foundation.mp3 in Resources */,
+				EFCF82E92B243AB2005786DE /* marble.mp3 in Resources */,
 				7343414B2362BE7D00F23D00 /* loader_shahcement_06.png in Resources */,
+				EFCF82F82B243AB2005786DE /* readymix_concrete.mp3 in Resources */,
 				734341542362BE7D00F23D00 /* loader_shahcement_14.png in Resources */,
+				EFCF82FB2B243AB2005786DE /* electric.mp3 in Resources */,
 				C58FCF162034A418006C1DC2 /* Montserrat-Bold.ttf in Resources */,
+				EFCF82E52B243AB2005786DE /* site_preperation.mp3 in Resources */,
+				EFCF82F22B243AB2005786DE /* bali.mp3 in Resources */,
 				C54066FE2115FFFD00C31564 /* 09.png in Resources */,
 				C58FCF192034A418006C1DC2 /* Montserrat-Regular.ttf in Resources */,
+				EFCF82F62B243AB2005786DE /* rod_badhai.mp3 in Resources */,
 				734341652362BE7D00F23D00 /* loader_shahcement_31.png in Resources */,
 				C5406701211602CA00C31564 /* splash.gif in Resources */,
 				734341632362BE7D00F23D00 /* loader_shahcement_19.png in Resources */,
@@ -452,33 +565,48 @@
 				734341692362BE7D00F23D00 /* loader_shahcement_08.png in Resources */,
 				C54066FB2115FFFD00C31564 /* 7.png in Resources */,
 				734341582362BE7D00F23D00 /* loader_shahcement_29.png in Resources */,
+				EFCF82EA2B243AB2005786DE /* concrete.mp3 in Resources */,
 				734341502362BE7D00F23D00 /* loader_shahcement_05.png in Resources */,
+				EFCF82E72B243AB2005786DE /* design.mp3 in Resources */,
 				734341682362BE7D00F23D00 /* loader_shahcement_20.png in Resources */,
 				C58FCEFF2034945A006C1DC2 /* LaunchScreen.storyboard in Resources */,
 				7343415F2362BE7D00F23D00 /* loader_shahcement_26.png in Resources */,
+				EFCF82F92B243AB2005786DE /* stone.mp3 in Resources */,
 				734341532362BE7D00F23D00 /* loader_shahcement_28.png in Resources */,
 				7343416B2362BE7D00F23D00 /* loader_shahcement_23.png in Resources */,
 				7343415A2362BE7D00F23D00 /* loader_shahcement_17.png in Resources */,
+				EFCF83002B243AB2005786DE /* cement.mp3 in Resources */,
+				EFCF82FF2B243AB2005786DE /* soil_test.mp3 in Resources */,
 				C54066FC2115FFFD00C31564 /* 07.png in Resources */,
+				EFCF82EB2B243AB2005786DE /* khoa.mp3 in Resources */,
 				C528ACB1207A681E00AFDC15 /* thumbs in Resources */,
+				EFCF82FC2B243AB2005786DE /* concrete_dhalai.mp3 in Resources */,
 				C58FCEFC2034945A006C1DC2 /* Assets.xcassets in Resources */,
 				C54066F42115FFFD00C31564 /* 3.png in Resources */,
 				734341672362BE7D00F23D00 /* loader_shahcement_21.png in Resources */,
+				EFCF83012B243AB2005786DE /* glass_alumunium.mp3 in Resources */,
 				7343414D2362BE7D00F23D00 /* loader_shahcement_13.png in Resources */,
+				EFCF82F02B243AB2005786DE /* formwork.mp3 in Resources */,
+				EFCF82E82B243AB2005786DE /* fire.mp3 in Resources */,
 				C54066FD2115FFFD00C31564 /* 08.png in Resources */,
 				C58FCF182034A418006C1DC2 /* Montserrat-Medium.ttf in Resources */,
 				C54066F92115FFFD00C31564 /* 6.png in Resources */,
+				EFCF82ED2B243AB2005786DE /* rod.mp3 in Resources */,
 				C58FCF1A2034A418006C1DC2 /* Montserrat-SemiBold.ttf in Resources */,
 				734341622362BE7D00F23D00 /* loader_shahcement_18.png in Resources */,
 				734341512362BE7D00F23D00 /* loader_shahcement_04.png in Resources */,
 				C54066F82115FFFD00C31564 /* 05.png in Resources */,
 				C54066FA2115FFFD00C31564 /* 06.png in Resources */,
 				C54066F72115FFFD00C31564 /* 5.png in Resources */,
+				EFCF82EC2B243AB2005786DE /* sanitary.mp3 in Resources */,
+				EFCF82F32B243AB2005786DE /* piling.mp3 in Resources */,
 				7343415D2362BE7D00F23D00 /* loader_shahcement_27.png in Resources */,
 				C5406703211607B000C31564 /* after_splash.png in Resources */,
 				7343414C2362BE7D00F23D00 /* loader_shahcement_12.png in Resources */,
 				C58FCEFA2034945A006C1DC2 /* Main.storyboard in Resources */,
 				7343415E2362BE7D00F23D00 /* loader_shahcement_32.png in Resources */,
+				EFCF82FA2B243AB2005786DE /* iter_kotha.mp3 in Resources */,
+				EFCF82FE2B243AB2005786DE /* curing.mp3 in Resources */,
 				734341592362BE7D00F23D00 /* loader_shahcement_03.png in Resources */,
 				734341572362BE7D00F23D00 /* loader_shahcement_15.png in Resources */,
 				734341602362BE7D00F23D00 /* loader_shahcement_30.png in Resources */,
