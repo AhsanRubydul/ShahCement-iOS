@@ -377,13 +377,14 @@
                                     <constraint firstItem="VcV-pv-IZ1" firstAttribute="centerX" secondItem="r9y-eh-Yqy" secondAttribute="centerX" id="RC3-Xr-kNq"/>
                                 </constraints>
                             </view>
-                            <webView opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-yZ-sAa">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0B-L3-RqK" userLabel="New Web View">
                                 <rect key="frame" x="0.0" y="131" width="375" height="476"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="delegate" destination="fiC-mz-6HX" id="dJn-u1-zai"/>
-                                </connections>
-                            </webView>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="bottombar" translatesAutoresizingMaskIntoConstraints="NO" id="iL3-gp-aJK">
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -400,15 +401,15 @@
                             <constraint firstItem="iL3-gp-aJK" firstAttribute="trailing" secondItem="WsS-ZU-ksW" secondAttribute="trailing" id="7vb-jO-K0s"/>
                             <constraint firstItem="r9y-eh-Yqy" firstAttribute="top" secondItem="6f8-hC-VrP" secondAttribute="bottom" id="BVc-xA-Slb"/>
                             <constraint firstItem="r9y-eh-Yqy" firstAttribute="trailing" secondItem="9AZ-tP-yda" secondAttribute="trailing" id="Cah-Wz-mrd"/>
-                            <constraint firstItem="xTd-yZ-sAa" firstAttribute="leading" secondItem="9AZ-tP-yda" secondAttribute="leading" id="MV5-PN-vP2"/>
+                            <constraint firstItem="X0B-L3-RqK" firstAttribute="leading" secondItem="9AZ-tP-yda" secondAttribute="leading" id="MV5-PN-vP2"/>
                             <constraint firstItem="f4d-8g-53X" firstAttribute="centerY" secondItem="6f8-hC-VrP" secondAttribute="centerY" id="OdS-KY-QjB"/>
                             <constraint firstItem="r9y-eh-Yqy" firstAttribute="leading" secondItem="9AZ-tP-yda" secondAttribute="leading" id="UuI-62-EjP"/>
                             <constraint firstItem="6f8-hC-VrP" firstAttribute="leading" secondItem="9AZ-tP-yda" secondAttribute="leading" id="WHz-4m-hss"/>
-                            <constraint firstItem="xTd-yZ-sAa" firstAttribute="trailing" secondItem="9AZ-tP-yda" secondAttribute="trailing" id="m1H-i6-3b5"/>
+                            <constraint firstItem="X0B-L3-RqK" firstAttribute="trailing" secondItem="9AZ-tP-yda" secondAttribute="trailing" id="m1H-i6-3b5"/>
                             <constraint firstItem="6f8-hC-VrP" firstAttribute="trailing" secondItem="9AZ-tP-yda" secondAttribute="trailing" id="n9D-BK-r8f"/>
                             <constraint firstItem="6f8-hC-VrP" firstAttribute="top" secondItem="9AZ-tP-yda" secondAttribute="top" id="p0w-8m-B07"/>
-                            <constraint firstItem="iL3-gp-aJK" firstAttribute="top" secondItem="xTd-yZ-sAa" secondAttribute="bottom" id="pV1-Qa-iPl"/>
-                            <constraint firstItem="xTd-yZ-sAa" firstAttribute="top" secondItem="r9y-eh-Yqy" secondAttribute="bottom" id="pwO-Nt-gOy"/>
+                            <constraint firstItem="iL3-gp-aJK" firstAttribute="top" secondItem="X0B-L3-RqK" secondAttribute="bottom" id="pV1-Qa-iPl"/>
+                            <constraint firstItem="X0B-L3-RqK" firstAttribute="top" secondItem="r9y-eh-Yqy" secondAttribute="bottom" id="pwO-Nt-gOy"/>
                             <constraint firstItem="f4d-8g-53X" firstAttribute="leading" secondItem="9AZ-tP-yda" secondAttribute="leading" constant="4" id="vXH-H3-KCK"/>
                         </constraints>
                     </view>
@@ -423,7 +424,7 @@
                         <outlet property="imageViewTopBar" destination="6f8-hC-VrP" id="XAS-uf-evH"/>
                         <outlet property="topButtonWidth" destination="q7z-T2-xMM" id="4LW-mi-gt2"/>
                         <outlet property="viewButtonBar" destination="r9y-eh-Yqy" id="vMe-o9-7JZ"/>
-                        <outlet property="webViewMain" destination="xTd-yZ-sAa" id="vVT-lK-S2a"/>
+                        <outlet property="webViewMain" destination="X0B-L3-RqK" id="oj8-Ro-C5R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggf-Zs-9WP" userLabel="First Responder" sceneMemberID="firstResponder"/>
