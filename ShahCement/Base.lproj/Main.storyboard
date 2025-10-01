@@ -653,23 +653,24 @@
                                     <action selector="actionMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vHn-1y-MZe"/>
                                 </connections>
                             </button>
-                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXj-7j-DOf">
+                            <wkWebView contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTA-tK-yWR" userLabel="New Web View">
                                 <rect key="frame" x="0.0" y="47" width="375" height="600"/>
                                 <color key="backgroundColor" red="0.93953487989999995" green="0.93953487989999995" blue="0.93953487989999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Pgn-du-I1J" id="YrT-IV-7ji"/>
-                                </connections>
-                            </webView>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UFk-RE-yNq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VTA-tK-yWR" firstAttribute="bottom" secondItem="UFk-RE-yNq" secondAttribute="bottom" id="33g-5V-uQ9"/>
+                            <constraint firstItem="VTA-tK-yWR" firstAttribute="top" secondItem="5Tu-ci-MIy" secondAttribute="bottom" id="5Yn-GJ-FA1"/>
                             <constraint firstItem="5Tu-ci-MIy" firstAttribute="top" secondItem="UFk-RE-yNq" secondAttribute="top" id="9tm-or-Z5m"/>
-                            <constraint firstItem="dXj-7j-DOf" firstAttribute="leading" secondItem="UFk-RE-yNq" secondAttribute="leading" id="G6G-RF-lWM"/>
+                            <constraint firstItem="VTA-tK-yWR" firstAttribute="trailing" secondItem="UFk-RE-yNq" secondAttribute="trailing" id="9xg-cn-Mfs"/>
+                            <constraint firstItem="VTA-tK-yWR" firstAttribute="leading" secondItem="UFk-RE-yNq" secondAttribute="leading" id="Ce7-7a-SRi"/>
                             <constraint firstItem="5Tu-ci-MIy" firstAttribute="trailing" secondItem="UFk-RE-yNq" secondAttribute="trailing" id="Snc-Iy-9mL"/>
-                            <constraint firstItem="dXj-7j-DOf" firstAttribute="bottom" secondItem="UFk-RE-yNq" secondAttribute="bottom" id="UiI-41-B8N"/>
-                            <constraint firstItem="dXj-7j-DOf" firstAttribute="trailing" secondItem="UFk-RE-yNq" secondAttribute="trailing" id="VcW-Go-HxM"/>
-                            <constraint firstItem="dXj-7j-DOf" firstAttribute="top" secondItem="5Tu-ci-MIy" secondAttribute="bottom" id="ZBU-jg-IcY"/>
                             <constraint firstItem="gOy-bS-jO6" firstAttribute="centerY" secondItem="5Tu-ci-MIy" secondAttribute="centerY" id="jyO-8u-HS3"/>
                             <constraint firstItem="gOy-bS-jO6" firstAttribute="leading" secondItem="UFk-RE-yNq" secondAttribute="leading" constant="4" id="kj7-Nn-mtw"/>
                             <constraint firstItem="5Tu-ci-MIy" firstAttribute="leading" secondItem="UFk-RE-yNq" secondAttribute="leading" id="ot0-2X-a8c"/>
@@ -679,7 +680,7 @@
                     <connections>
                         <outlet property="buttonBack" destination="gOy-bS-jO6" id="SOR-Ec-oh2"/>
                         <outlet property="imageViewTopBar" destination="5Tu-ci-MIy" id="oco-bb-woq"/>
-                        <outlet property="webViewMain" destination="dXj-7j-DOf" id="sp6-MG-uUD"/>
+                        <outlet property="webViewMain" destination="VTA-tK-yWR" id="QNe-ar-8CM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAC-2J-NhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
