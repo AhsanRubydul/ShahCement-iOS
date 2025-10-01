@@ -81,6 +81,7 @@
 		C5FB2BA42035C131009A6055 /* ProductDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2BA32035C131009A6055 /* ProductDetailsController.m */; };
 		EF53C18C2B22F341009AC846 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF53C18B2B22F341009AC846 /* AVFoundation.framework */; };
 		EF7735B12E7037F90072C27A /* WKWebView+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7735B02E7037F90072C27A /* WKWebView+Scaling.m */; };
+		EFB9C75A2E8D3CF800C4EA17 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB9C7592E8D3CF800C4EA17 /* SceneDelegate.m */; };
 		EFCF82E52B243AB2005786DE /* site_preperation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82C82B243AAF005786DE /* site_preperation.mp3 */; };
 		EFCF82E62B243AB2005786DE /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82C92B243AAF005786DE /* water.mp3 */; };
 		EFCF82E72B243AB2005786DE /* design.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82CA2B243AB0005786DE /* design.mp3 */; };
@@ -202,6 +203,8 @@
 		EF53C18B2B22F341009AC846 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EF7735B02E7037F90072C27A /* WKWebView+Scaling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+Scaling.m"; sourceTree = "<group>"; };
 		EF7735B32E7038230072C27A /* WKWebView+Scaling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+Scaling.h"; sourceTree = "<group>"; };
+		EFB9C7592E8D3CF800C4EA17 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		EFB9C75C2E8D3D3000C4EA17 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		EFCF82C82B243AAF005786DE /* site_preperation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = site_preperation.mp3; sourceTree = "<group>"; };
 		EFCF82C92B243AAF005786DE /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
 		EFCF82CA2B243AB0005786DE /* design.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = design.mp3; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 				C58FCF002034945A006C1DC2 /* Info.plist */,
 				C58FCF062034A243006C1DC2 /* Info.pch */,
 				C58FCEEF20349459006C1DC2 /* Supporting Files */,
+				EFB9C7592E8D3CF800C4EA17 /* SceneDelegate.m */,
+				EFB9C75C2E8D3D3000C4EA17 /* SceneDelegate.h */,
 			);
 			path = ShahCement;
 			sourceTree = "<group>";
@@ -655,6 +660,7 @@
 				C5307FE82056715E00CFCD74 /* VideoPlayerController.m in Sources */,
 				C58FCF0E2034A2F5006C1DC2 /* MenuController.m in Sources */,
 				C5FB2BA12035C0B4009A6055 /* ProductListController.m in Sources */,
+				EFB9C75A2E8D3CF800C4EA17 /* SceneDelegate.m in Sources */,
 				C5307FD620566AA100CFCD74 /* VideoListController.m in Sources */,
 				C58FCF0A2034A275006C1DC2 /* DataSource.m in Sources */,
 				EF7735B12E7037F90072C27A /* WKWebView+Scaling.m in Sources */,

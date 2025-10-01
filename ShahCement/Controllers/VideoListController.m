@@ -58,9 +58,6 @@
     CGFloat height = size.height * screenSize.size.width / size.width;
     
     bottomImageViewHeightConstraint.constant = height;
-
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
 }
 
 - (IBAction)actionBack:(id)sender {
