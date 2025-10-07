@@ -7,13 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MMDrawerVisualState.h"
-#import "MMDrawerController.h"
 #import "MenuController.h"
-
-@interface AppDelegate ()
-@property (nonatomic,strong) MMDrawerController *drawerController;
-@end
 
 @implementation AppDelegate
 

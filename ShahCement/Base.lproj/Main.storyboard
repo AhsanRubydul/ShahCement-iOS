@@ -201,17 +201,6 @@
                                     <constraint firstAttribute="height" constant="59.5" id="AYF-zZ-12S"/>
                                 </constraints>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btw-6V-cdU">
-                                <rect key="frame" x="8" y="31.5" width="28" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="dhS-wQ-lCG"/>
-                                    <constraint firstAttribute="width" constant="28" id="wq8-jH-9sH"/>
-                                </constraints>
-                                <state key="normal" image="list"/>
-                                <connections>
-                                    <action selector="actionMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FNx-Qf-FF8"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMH-Kh-Jvo">
                                 <rect key="frame" x="0.0" y="607.5" width="375" height="59.5"/>
                                 <connections>
@@ -234,7 +223,6 @@
                             <constraint firstItem="JGP-7H-K9N" firstAttribute="top" secondItem="1uk-Ws-l2Z" secondAttribute="bottom" id="4lk-dw-xv7"/>
                             <constraint firstItem="jMH-Kh-Jvo" firstAttribute="top" secondItem="lAa-I8-FHa" secondAttribute="top" id="6vc-mI-uSR"/>
                             <constraint firstItem="jMH-Kh-Jvo" firstAttribute="trailing" secondItem="lAa-I8-FHa" secondAttribute="trailing" id="8Tj-B0-pqK"/>
-                            <constraint firstItem="Btw-6V-cdU" firstAttribute="leading" secondItem="WXB-GZ-jzM" secondAttribute="leading" constant="8" id="9Pb-pQ-T2p"/>
                             <constraint firstItem="JGP-7H-K9N" firstAttribute="leading" secondItem="WXB-GZ-jzM" secondAttribute="leading" id="9fD-pY-t5D"/>
                             <constraint firstItem="1uk-Ws-l2Z" firstAttribute="top" secondItem="WXB-GZ-jzM" secondAttribute="top" id="Dlj-Wz-Iw3"/>
                             <constraint firstItem="jMH-Kh-Jvo" firstAttribute="bottom" secondItem="lAa-I8-FHa" secondAttribute="bottom" id="EaF-7m-pPO"/>
@@ -250,7 +238,6 @@
                             <constraint firstItem="bkH-y5-0io" firstAttribute="top" secondItem="1uk-Ws-l2Z" secondAttribute="bottom" constant="60" id="YyZ-Fa-Siu"/>
                             <constraint firstAttribute="bottom" secondItem="lAa-I8-FHa" secondAttribute="bottom" id="bDQ-Fi-VG6"/>
                             <constraint firstItem="JxW-7c-7KS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bFj-Pr-WjO"/>
-                            <constraint firstItem="Btw-6V-cdU" firstAttribute="centerY" secondItem="1uk-Ws-l2Z" secondAttribute="centerY" id="bb7-H1-Crt"/>
                             <constraint firstItem="4PF-1W-GyH" firstAttribute="leading" secondItem="WXB-GZ-jzM" secondAttribute="leading" id="cqv-ge-zcQ"/>
                             <constraint firstAttribute="trailing" secondItem="JxW-7c-7KS" secondAttribute="trailing" id="gCU-Nl-h2f"/>
                             <constraint firstItem="bkH-y5-0io" firstAttribute="leading" secondItem="WXB-GZ-jzM" secondAttribute="leading" id="hQR-T4-nGN"/>
@@ -268,7 +255,6 @@
                     <navigationItem key="navigationItem" id="IBG-OG-Dmc"/>
                     <connections>
                         <outlet property="bottomImageViewHeightConstraint" destination="AYF-zZ-12S" id="lRd-ul-SyG"/>
-                        <outlet property="buttonMenu" destination="Btw-6V-cdU" id="iJz-dB-086"/>
                         <outlet property="buttonToggle" destination="EiT-Te-rW3" id="ekZ-76-iFG"/>
                         <outlet property="collectionLayout" destination="gTV-kB-WSe" id="BRI-Uh-dFi"/>
                         <outlet property="imageViewGif" destination="nKE-FF-P3m" id="i0f-2M-P03"/>
@@ -721,7 +707,6 @@
         <image name="ic_product" width="1140" height="1368"/>
         <image name="ic_video" width="1141" height="1393"/>
         <image name="left_arrow" width="24" height="24"/>
-        <image name="list" width="28" height="28"/>
         <image name="tab_btn_audio" width="320" height="93"/>
         <image name="tab_btn_lokkhoniyo" width="320" height="93"/>
         <image name="tab_btn_question" width="320" height="97.5"/>

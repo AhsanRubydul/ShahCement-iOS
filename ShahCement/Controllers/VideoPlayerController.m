@@ -7,7 +7,6 @@
 //
 
 #import "VideoPlayerController.h"
-#import "MBProgressHUD.h"
 #import "AppSupporter.h"
 
 @interface VideoPlayerController ()
