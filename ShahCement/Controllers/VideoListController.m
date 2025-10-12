@@ -65,7 +65,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 210.0f;
+    CGFloat screenWidth = UIScreen.mainScreen.bounds.size.width;
+    CGFloat aspectRatio = 540.0 / 958.0;
+    return screenWidth * aspectRatio;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView {
@@ -90,8 +92,6 @@
     //cell.imageViewThumb.image   = [UIImage imageNamed:[dictionary valueForKey:@"image"]];
     [cell.imageViewThumb sd_setImageWithURL:[NSURL URLWithString:[[DataSource videoListThumbnails] objectAtIndex:indexPath.row]]
                  placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    cell.labelTitle.text        = [[DataSource videoListTitles] objectAtIndex:indexPath.row];
-    cell.labelDuration.text     = [[DataSource videoListDurations] objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -119,9 +119,6 @@
 
 @synthesize viewContainer;
 @synthesize imageViewThumb;
-@synthesize labelTitle;
-@synthesize labelDuration;
-@synthesize imageViewDuration;
 
 - (void)awakeFromNib
 {
@@ -135,14 +132,6 @@
     
     self.imageViewThumb.backgroundColor     = [UIColor whiteColor];
     self.imageViewThumb.layer.masksToBounds = YES;
-    
-    labelTitle.backgroundColor = [UIColor clearColor];
-    labelTitle.font = [UIFont fontWithName:APP_ENGLISH_SEMI_BOLD_FONT size:12.0f];
-    labelTitle.textColor = [UIColor blackColor];
-    
-    labelDuration.backgroundColor = [UIColor clearColor];
-    labelDuration.font = [UIFont fontWithName:APP_ENGLISH_REGULAR_FONT size:11.0f];
-    labelDuration.textColor = [UIColor darkGrayColor];
 }
 
 @end

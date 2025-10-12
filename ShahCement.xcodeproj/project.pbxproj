@@ -790,7 +790,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2VBL5YVAP6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Info.pch";
 				INFOPLIST_FILE = ShahCement/Info.plist;
@@ -812,7 +812,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2VBL5YVAP6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Info.pch";
 				INFOPLIST_FILE = ShahCement/Info.plist;

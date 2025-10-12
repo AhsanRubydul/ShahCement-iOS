@@ -512,44 +512,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ly-cb-oY7">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ly-cb-oY7">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5v-kC-icU">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k5v-kC-icU">
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="204"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                             <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </imageView>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceL-Gx-5JR">
-                                                            <rect key="frame" x="144" y="8" width="223" height="75"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" red="0.22070891290474348" green="0.21691658550356774" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5i-7d-v09">
-                                                            <rect key="frame" x="334" y="167" width="33" height="24"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                                            <color key="backgroundColor" red="0.2207089129" green="0.21691658550000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="0Ue-fz-0It">
-                                                            <rect key="frame" x="309" y="91" width="16" height="16"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="k5v-kC-icU" firstAttribute="leading" secondItem="3ly-cb-oY7" secondAttribute="leading" id="8bw-KP-NLi"/>
+                                                        <constraint firstItem="k5v-kC-icU" firstAttribute="top" secondItem="3ly-cb-oY7" secondAttribute="top" id="Wg4-9X-xFb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="k5v-kC-icU" secondAttribute="bottom" id="XoH-TC-eLn"/>
+                                                        <constraint firstAttribute="trailing" secondItem="k5v-kC-icU" secondAttribute="trailing" id="ynQ-kH-ErH"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="3ly-cb-oY7" secondAttribute="trailing" id="81g-2F-SGx"/>
+                                                <constraint firstItem="3ly-cb-oY7" firstAttribute="leading" secondItem="LmO-3F-Weg" secondAttribute="leading" id="cNV-yI-bhg"/>
+                                                <constraint firstAttribute="bottom" secondItem="3ly-cb-oY7" secondAttribute="bottom" constant="6" id="dbd-gs-zf7"/>
+                                                <constraint firstItem="3ly-cb-oY7" firstAttribute="top" secondItem="LmO-3F-Weg" secondAttribute="top" id="qeY-dJ-pRV"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imageViewThumb" destination="k5v-kC-icU" id="FSX-kJ-Ujf"/>
-                                            <outlet property="labelDuration" destination="Y5i-7d-v09" id="kBQ-zc-vUV"/>
-                                            <outlet property="labelTitle" destination="ceL-Gx-5JR" id="FMa-aS-g9W"/>
                                             <outlet property="viewContainer" destination="3ly-cb-oY7" id="lgn-9N-BbJ"/>
                                         </connections>
                                     </tableViewCell>
@@ -711,7 +699,6 @@
         <image name="tab_btn_lokkhoniyo" width="320" height="93"/>
         <image name="tab_btn_question" width="320" height="97.5"/>
         <image name="tab_btn_video" width="320" height="93"/>
-        <image name="time" width="10" height="10"/>
         <image name="topbar" width="320" height="47"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
