@@ -135,7 +135,9 @@
                           "</iframe>"
                           "</body>"
                           "</html>", videoId];
-    [webViewMain loadHTMLString:videoUrl baseURL:nil];
+    NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
+    NSURL *baseURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@/", bundleId ?: @"localhost"]];
+    [webViewMain loadHTMLString:videoUrl baseURL:baseURL];
 }
 
 - (IBAction)actionLokkhonio:(id)sender
