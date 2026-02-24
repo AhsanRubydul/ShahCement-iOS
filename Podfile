@@ -6,11 +6,8 @@ target 'ShahCement' do
   # use_frameworks!
 
   # Pods for ShahCement]
-  pod "MMDrawerController"
-  pod "MBProgressHUD"
   pod "FLAnimatedImage", "~> 1.0"
   pod "SDWebImage", "~> 5.0"
   pod "Toast", "~> 4.0.0"
-  #pod "youtube-ios-player-helper", "~> 0.1.4"
 
 end

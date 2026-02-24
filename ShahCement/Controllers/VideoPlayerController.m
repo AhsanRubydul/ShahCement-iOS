@@ -7,7 +7,6 @@
 //
 
 #import "VideoPlayerController.h"
-#import "MBProgressHUD.h"
 #import "AppSupporter.h"
 
 @interface VideoPlayerController ()
@@ -51,29 +50,21 @@
 
 - (void)playVideoWithId:(NSString *)videoId
 {
-    NSString *videoUrl = [NSString stringWithFormat:@"<html><head><style>body{margin:0px 0px 0px 0px;}</style></head> <body> <div id=\"player\"></div> <script> var tag = document.createElement('script'); tag.src = 'http://www.youtube.com/player_api'; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { player = new YT.Player('player', { width:'%f', height:'%f', videoId:'%@', events: { 'onReady': onPlayerReady } }); } function onPlayerReady(event) { event.target.playVideo(); } </script> </body> </html>",CGRectGetWidth(self.view.frame),CGRectGetHeight(self.view.frame),videoId];
+    webViewMain.configuration.allowsInlineMediaPlayback = NO;
+    webViewMain.configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
     
-    webViewMain.mediaPlaybackRequiresUserAction = NO;
-    
-    [webViewMain loadHTMLString:videoUrl baseURL:[[NSBundle mainBundle] resourceURL]];
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-    NSLog(@"webViewDidStartLoad");
-    //[MBProgressHUD showHUDAddedTo:webViewMain animated:YES];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    NSLog(@"webViewDidFinishLoad");
-    //[MBProgressHUD hideHUDForView:webViewMain animated:YES];
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    NSLog(@"didFailLoadWithError");
-    //[MBProgressHUD hideHUDForView:webViewMain animated:YES];
+    // HTML string using YouTube IFrame API
+    NSString *videoUrl = [NSString stringWithFormat:
+                          @"<html>"
+                          "<head><meta name='viewport' content='width=device-width, initial-scale=1.0'></head>"
+                          "<body style='margin:0;padding:0;'>"
+                          "<iframe width='100%%' height='100%%' "
+                          "src='https://www.youtube.com/embed/%@?rel=0&playsinline=1&autoplay=1' "
+                          "frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>"
+                          "</iframe>"
+                          "</body>"
+                          "</html>", videoId];
+    [webViewMain loadHTMLString:videoUrl baseURL:nil];
 }
 
 @end

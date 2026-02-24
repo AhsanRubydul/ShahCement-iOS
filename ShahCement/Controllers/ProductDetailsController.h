@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ProductDetailsController : UIViewController
+@interface ProductDetailsController : UIViewController <WKNavigationDelegate>
 {
-    IBOutlet    UIWebView                   *webViewMain;
+    IBOutlet    WKWebView                   *webViewMain;
     IBOutlet    UIView                      *viewButtonBar;
     IBOutlet    UIButton                    *buttonBack;
     

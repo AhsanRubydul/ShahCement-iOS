@@ -80,6 +80,8 @@
 		C5FB2BA12035C0B4009A6055 /* ProductListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2BA02035C0B4009A6055 /* ProductListController.m */; };
 		C5FB2BA42035C131009A6055 /* ProductDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FB2BA32035C131009A6055 /* ProductDetailsController.m */; };
 		EF53C18C2B22F341009AC846 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF53C18B2B22F341009AC846 /* AVFoundation.framework */; };
+		EF7735B12E7037F90072C27A /* WKWebView+Scaling.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7735B02E7037F90072C27A /* WKWebView+Scaling.m */; };
+		EFB9C75A2E8D3CF800C4EA17 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB9C7592E8D3CF800C4EA17 /* SceneDelegate.m */; };
 		EFCF82E52B243AB2005786DE /* site_preperation.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82C82B243AAF005786DE /* site_preperation.mp3 */; };
 		EFCF82E62B243AB2005786DE /* water.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82C92B243AAF005786DE /* water.mp3 */; };
 		EFCF82E72B243AB2005786DE /* design.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFCF82CA2B243AB0005786DE /* design.mp3 */; };
@@ -199,6 +201,10 @@
 		C5FB2BA32035C131009A6055 /* ProductDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsController.m; sourceTree = "<group>"; };
 		D1F5DA4D8A78A98244085FCB /* Pods-ShahCement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShahCement.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShahCement/Pods-ShahCement.debug.xcconfig"; sourceTree = "<group>"; };
 		EF53C18B2B22F341009AC846 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EF7735B02E7037F90072C27A /* WKWebView+Scaling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+Scaling.m"; sourceTree = "<group>"; };
+		EF7735B32E7038230072C27A /* WKWebView+Scaling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+Scaling.h"; sourceTree = "<group>"; };
+		EFB9C7592E8D3CF800C4EA17 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		EFB9C75C2E8D3D3000C4EA17 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		EFCF82C82B243AAF005786DE /* site_preperation.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = site_preperation.mp3; sourceTree = "<group>"; };
 		EFCF82C92B243AAF005786DE /* water.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water.mp3; sourceTree = "<group>"; };
 		EFCF82CA2B243AB0005786DE /* design.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = design.mp3; sourceTree = "<group>"; };
@@ -337,6 +343,8 @@
 				C58FCF002034945A006C1DC2 /* Info.plist */,
 				C58FCF062034A243006C1DC2 /* Info.pch */,
 				C58FCEEF20349459006C1DC2 /* Supporting Files */,
+				EFB9C7592E8D3CF800C4EA17 /* SceneDelegate.m */,
+				EFB9C75C2E8D3D3000C4EA17 /* SceneDelegate.h */,
 			);
 			path = ShahCement;
 			sourceTree = "<group>";
@@ -352,6 +360,8 @@
 		C58FCF072034A275006C1DC2 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				EF7735B32E7038230072C27A /* WKWebView+Scaling.h */,
+				EF7735B02E7037F90072C27A /* WKWebView+Scaling.m */,
 				C53C043A20794CE90042222E /* AppSupporter.h */,
 				C53C043B20794CE90042222E /* AppSupporter.m */,
 				C58FCF082034A275006C1DC2 /* DataSource.h */,
@@ -650,8 +660,10 @@
 				C5307FE82056715E00CFCD74 /* VideoPlayerController.m in Sources */,
 				C58FCF0E2034A2F5006C1DC2 /* MenuController.m in Sources */,
 				C5FB2BA12035C0B4009A6055 /* ProductListController.m in Sources */,
+				EFB9C75A2E8D3CF800C4EA17 /* SceneDelegate.m in Sources */,
 				C5307FD620566AA100CFCD74 /* VideoListController.m in Sources */,
 				C58FCF0A2034A275006C1DC2 /* DataSource.m in Sources */,
+				EF7735B12E7037F90072C27A /* WKWebView+Scaling.m in Sources */,
 				C58FCEF12034945A006C1DC2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,13 +790,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2VBL5YVAP6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Info.pch";
 				INFOPLIST_FILE = ShahCement/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmux.nirmaneyaami;
 				PRODUCT_NAME = "Nirmane Ami";
 				PROVISIONING_PROFILE = "";
@@ -800,13 +812,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2VBL5YVAP6;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(PROJECT_NAME)/Info.pch";
 				INFOPLIST_FILE = ShahCement/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartmux.nirmaneyaami;
 				PRODUCT_NAME = "Nirmane Ami";
 				PROVISIONING_PROFILE = "";

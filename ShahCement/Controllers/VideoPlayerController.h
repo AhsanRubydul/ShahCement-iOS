@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @interface VideoPlayerController : UIViewController
 {
-    IBOutlet    UIWebView                   *webViewMain;
+    IBOutlet WKWebView *webViewMain;
     IBOutlet    UIButton                    *buttonBack;
     IBOutlet    UIImageView                 *imageViewTopBar;
 }

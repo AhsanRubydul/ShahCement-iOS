@@ -12,6 +12,7 @@
 #import "UIView+Toast.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "WKWebView+Scaling.h"
 
 @interface ProductDetailsController ()
 {
@@ -24,9 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-   // self.view.backgroundColor = [UIColor whiteColor];
-    
+ 
     viewButtonBar.backgroundColor = APP_THEME_COLOR;
     
     [self adjustBottomBar];
@@ -61,7 +60,10 @@
     customLoaderView = [[CustomLoader alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:customLoaderView];
     customLoaderView.alpha = 0.0f;
-
+    
+    webViewMain.navigationDelegate = self;
+    webViewMain.scrollView.backgroundColor = [UIColor whiteColor];
+    
     [self loadInitialisePdf];
     [self setupAudioPlayer];
 }
@@ -119,11 +121,21 @@
 
 - (void)playVideoWithId:(NSString *)videoId
 {
-    NSString *videoUrl = [NSString stringWithFormat:@"<html><head><style>body{margin:0px 0px 0px 0px;}</style></head> <body> <div id=\"player\"></div> <script> var tag = document.createElement('script'); tag.src = 'http://www.youtube.com/player_api'; var firstScriptTag = document.getElementsByTagName('script')[0]; firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); var player; function onYouTubePlayerAPIReady() { player = new YT.Player('player', { width:'%f', height:'%f', videoId:'%@', events: { 'onReady': onPlayerReady } }); } function onPlayerReady(event) { event.target.playVideo(); } </script> </body> </html>",CGRectGetWidth(webViewMain.frame),CGRectGetHeight(webViewMain.frame),videoId];
+    webViewMain.configuration.allowsInlineMediaPlayback = NO;
+    webViewMain.configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
     
-    webViewMain.mediaPlaybackRequiresUserAction = NO;
-    
-    [webViewMain loadHTMLString:videoUrl baseURL:[[NSBundle mainBundle] resourceURL]];
+    // HTML string using YouTube IFrame API
+    NSString *videoUrl = [NSString stringWithFormat:
+                          @"<html>"
+                          "<head><meta name='viewport' content='width=device-width, initial-scale=1.0'></head>"
+                          "<body style='margin:0;padding:0;'>"
+                          "<iframe width='100%%' height='100%%' "
+                          "src='https://www.youtube.com/embed/%@?rel=0&playsinline=1&autoplay=1' "
+                          "frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>"
+                          "</iframe>"
+                          "</body>"
+                          "</html>", videoId];
+    [webViewMain loadHTMLString:videoUrl baseURL:nil];
 }
 
 - (IBAction)actionLokkhonio:(id)sender
@@ -141,7 +153,7 @@
         NSURL *targetURL = [NSURL fileURLWithPath:lokkhonioPath];
         NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
         [webViewMain loadRequest:request];
-        webViewMain.scalesPageToFit = YES;
+        [webViewMain setScalesPageToFit:YES];
     });
 }
 
@@ -159,7 +171,7 @@
     }];
     UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"ACCEPT" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
         [self stopPlayer];
-        webViewMain.scalesPageToFit = NO;
+        [webViewMain setScalesPageToFit:NO];
         customLoaderView.alpha = 1.0f;
         [customLoaderView startAnimation];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
@@ -180,12 +192,12 @@
     }
     
     if (self.audioPlayer.isPlaying) {
-           [self.audioPlayer stop];
-           [self.audioPlayer setCurrentTime:0];
-       } else {
-           [self loadInitialisePdf];
-           [self.audioPlayer play];
-       }
+        [self.audioPlayer stop];
+        [self.audioPlayer setCurrentTime:0];
+    } else {
+        [self loadInitialisePdf];
+        [self.audioPlayer play];
+    }
 }
 
 - (IBAction)actionQuestionAnswers:(id)sender
@@ -203,14 +215,14 @@
         NSURL *targetURL = [NSURL fileURLWithPath:lokkhonioPath];
         NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
         [webViewMain loadRequest:request];
-        webViewMain.scalesPageToFit = YES;
+        [webViewMain setScalesPageToFit:YES];
     });
 }
 
 - (void)loadInitialisePdf{
     
     NSString    *mainPath = [[AppSupporter sharedInstance] getMainFilePath:self.fileName];
-    NSURLRequest *currentRequest = webViewMain.request;
+    NSURLRequest *currentRequest = [NSURLRequest requestWithURL:webViewMain.URL];
     
     if (currentRequest) {
         NSString *currentURLString = currentRequest.URL.absoluteString;
@@ -226,7 +238,7 @@
     
     customLoaderView.alpha = 1.0f;
     [customLoaderView startAnimation];
-    webViewMain.scalesPageToFit = YES;
+    [webViewMain setScalesPageToFit:YES];
     webViewMain.scrollView.showsHorizontalScrollIndicator = NO;
     webViewMain.scrollView.showsVerticalScrollIndicator = NO;
     [self setupAudioPlayer];
@@ -300,19 +312,24 @@
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = nowPlayingInfo;
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
     //NSLog(@"webViewDidStartLoad");
 //    NSString *padding = @"document.body.style.margin='0';document.body.style.padding = '0'";
 //    [webView stringByEvaluatingJavaScriptFromString:padding];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
     //NSLog(@"webViewDidFinishLoad");
     customLoaderView.alpha = 0.0f;
     [customLoaderView stopAnimation];
     
+    UIView *lastView = webView.subviews.lastObject;
+    
+    if (lastView != nil && ![lastView isKindOfClass:[UIScrollView class]]) {
+        lastView.hidden = YES;
+    }
     //webViewMain.scrollView.contentInset = UIEdgeInsetsMake(-6, -2, -2, -8);
     
     CGSize  contentSize = webViewMain.scrollView.contentSize;
@@ -324,7 +341,14 @@
     }
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error
+{
+    //NSLog(@"didFailLoadWithError");
+    customLoaderView.alpha = 0.0f;
+    [customLoaderView stopAnimation];
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
     //NSLog(@"didFailLoadWithError");
     customLoaderView.alpha = 0.0f;

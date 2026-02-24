@@ -8,7 +8,6 @@
 
 #import "ProductListController.h"
 #import "DataSource.h"
-#import "UIViewController+MMDrawerController.h"
 #import "ProductDetailsController.h"
 #import "AppSupporter.h"
 #import "FLAnimatedImage.h"
@@ -162,10 +161,6 @@
 }
 
 #pragma mark IBActions
-- (IBAction)actionMenu:(id)sender{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
-
 - (IBAction)actionForum:(id)sender {
    
     SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL: [NSURL URLWithString:@"https://www.nirmaneami.shahcement.com"]];
@@ -196,7 +191,7 @@
 
 - (IBAction)actionPhone:(id)sender {
     UIApplication *application = [UIApplication sharedApplication];
-    [application openURL:[NSURL URLWithString: @"tel:16281"] options:@{} completionHandler:nil];
+    [application openURL:[NSURL URLWithString: @"tel:+8801958075554"] options:@{} completionHandler:nil];
     
 }
 

@@ -22,7 +22,4 @@
 
 @property (nonatomic, strong) IBOutlet  UIView         *viewContainer;
 @property (nonatomic, strong) IBOutlet  UIImageView    *imageViewThumb;
-@property (nonatomic, strong) IBOutlet  UILabel        *labelTitle;
-@property (nonatomic, strong) IBOutlet  UILabel        *labelDuration;
-@property (nonatomic, strong) IBOutlet  UIImageView    *imageViewDuration;
 @end
