@@ -170,7 +170,7 @@
 }
 
 - (IBAction)actionProduct:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"VideoPlayerController" sender:@"https://www.shahcement.com/cem-ii/"];
+    [self performSegueWithIdentifier:@"VideoPlayerController" sender:@"https://www.shahcement.com/shah-cement-products"];
 }
 
 - (IBAction)actionVideo:(UIButton *)sender {
